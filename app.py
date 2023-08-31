@@ -108,9 +108,9 @@ input_data = my_model.input_data(input_dict)
 prediction = my_model.model_2(input_data)
 
 if prediction == 0:
-    st.markdown("<span style='color: blue;'>전세율이 85퍼센트를 넘지 않을 것으로 예상됩니다</span>", unsafe_allow_html=True)
+    st.markdown("<span style='color: blue;'>전세율이 80퍼센트를 넘지 않을 것으로 예상됩니다</span>", unsafe_allow_html=True)
 else:
-    st.markdown("<span style='color: red;'>전세율이 85퍼센트를 넘을 것으로 예상됩니다</span>", unsafe_allow_html=True)
+    st.markdown("<span style='color: red;'>전세율이 80퍼센트를 넘을 것으로 예상됩니다</span>", unsafe_allow_html=True)
 
 
 new_dict = {
