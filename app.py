@@ -33,7 +33,7 @@ def load_data():
 my_model = MyModel(model_path='simple_model_3.h5')
 df,location_dict = load_data()
 
-
+st.title("시군구별 역전세 예측")
 
 year = st.selectbox('연도를 선택하세요.', list(range(2023,2024)))
 month = st.selectbox('월을 선택하세요.', list(range(6, 12)))
