@@ -34,7 +34,7 @@ my_model = MyModel(model_path='simple_model_3.h5')
 df,location_dict = load_data()
 
 st.title("시군구별 역전세 예측")
-st.header('입력한 연월과 위치정보를 기반으로 1개월 후의 역전세를 예측합니다', divider='rainbow')
+st.subheader('입력한 연월과 위치정보를 기반으로 1개월 후의 역전세를 예측합니다', divider='rainbow')
 year = st.selectbox('연도를 선택하세요.', list(range(2023,2024)))
 month = st.selectbox('월을 선택하세요.', list(range(6, 12)))
 target_date = int(f"{year}{month:02d}") -1
