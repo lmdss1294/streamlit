@@ -34,7 +34,7 @@ my_model = MyModel(model_path='simple_model_3.h5')
 df,location_dict = load_data()
 
 st.title("시군구별 역전세 예측")
-
+st.header('입력한 연월과 위치정보를 기반으로 1개월 후의 역전세를 예측합니다', divider='rainbow')
 year = st.selectbox('연도를 선택하세요.', list(range(2023,2024)))
 month = st.selectbox('월을 선택하세요.', list(range(6, 12)))
 target_date = int(f"{year}{month:02d}") -1
@@ -108,9 +108,9 @@ input_data = my_model.input_data(input_dict)
 prediction = my_model.model_2(input_data)
 
 if prediction == 0:
-    st.markdown("<span style='color: blue;'>전세율이 80퍼센트를 넘지 않을 것으로 예상됩니다</span>", unsafe_allow_html=True)
+    st.markdown(f"<span style='color: blue;'>{target_date+1}에 전세율이 80퍼센트를 넘지 않을 것으로 예상됩니다</span>", unsafe_allow_html=True)
 else:
-    st.markdown("<span style='color: red;'>전세율이 80퍼센트를 넘을 것으로 예상됩니다</span>", unsafe_allow_html=True)
+    st.markdown(f"<span style='color: red;'>{target_date+1}에 전세율이 80퍼센트를 넘을 것으로 예상됩니다</span>", unsafe_allow_html=True)
 
 
 new_dict = {
